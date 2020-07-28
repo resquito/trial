@@ -1,0 +1,9 @@
+org/example/model/UserAuth$1.class
+org/example/model/User$1.class
+org/example/model/User$UserBuilderImpl.class
+org/example/model/UserAuth.class
+org/example/model/UserRoles.class
+org/example/model/UserAuth$UserAuthBuilderImpl.class
+org/example/model/UserAuth$UserAuthBuilder.class
+org/example/model/User$UserBuilder.class
+org/example/model/User.class

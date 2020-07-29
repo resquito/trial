@@ -1,6 +1,5 @@
 package org.example.model;
 
-import java.util.List;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -11,6 +10,5 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class UserAuth extends User {
-  String password;
-  List<UserRoles> roles;
+  private String password;
 }

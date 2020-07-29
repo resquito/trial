@@ -3,3 +3,10 @@ spring:
     url: jdbc:mariadb://localhost:3306/db
     username: user
     password: password
+
+trial:
+    jwt:
+      secret: JEpiUv2Pk7q5BoMBAEUsVkcceHbsaxgMsQ1FmXnFudbzF/q7l0UNV7pQXC6liw81abw54kpXKBxnX0zhRrl9WDLcSj0Uvnj25p5DnqSNKUtICjP66psJtiu82ButRD+S364U4wdy+qX0aQS/e7EDlZkqmri5JXhfFCIfmieoIjv0M4czY5jlNPVo7zkLCcclEign4d0N3wPhRMdHQUEc12qQy+G4mv/02xp7Hg==
+      issuer: me
+      type: JWT
+      audience: trial-api

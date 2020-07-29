@@ -10,8 +10,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class User {
-  Long id;
-  String username;
-  String firstName;
-  String lastName;
+  private String username;
+  private String firstname;
+  private String lastname;
 }

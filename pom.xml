@@ -17,6 +17,7 @@
     <module>trial-common</module>
     <module>trial-api</module>
     <module>trial-persistance</module>
+    <module>trial-service</module>
   </modules>
 
   <properties>
@@ -47,6 +48,11 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok-maven-plugin</artifactId>
+        <version>1.18.12.0</version>
       </plugin>
     </plugins>
   </build>

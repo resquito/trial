@@ -3,7 +3,8 @@ create table if not exists user (
   username varchar(100) not null,
   password varchar(200) not null,
   firstname varchar(100),
-  lastname varchar(100)
+  lastname varchar(100),
+  enabled TINYINT NOT NULL DEFAULT 1
 );
 
 insert into user (username, password, firstname, lastname)

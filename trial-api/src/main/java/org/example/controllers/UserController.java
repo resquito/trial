@@ -8,7 +8,6 @@ import org.example.model.UserAuth;
 import org.example.model.UserRoles;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -45,7 +44,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   public void configure(WebSecurity web) throws Exception {
-    web.ignoring().antMatchers("/swagger-ui.html", "/swagger-ui/*", "/v3/api-docs/swagger-config", "/v3/api-docs");
+    web.ignoring()
+        .antMatchers(
+            "/swagger-ui.html", "/swagger-ui/*", "/v3/api-docs/swagger-config", "/v3/api-docs");
   }
 
   @Override
@@ -61,9 +62,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/swagger-ui.html", "/swagger-ui/*", "/v3/api-docs/swagger-config", "/v3/api-docs")
         .permitAll()
         .and()
-        .addFilterAfter(new TrialAuthorizationFilter(secret, userService), UsernamePasswordAuthenticationFilter.class)
-        .addFilterAt(new TrialAuthenticationFilter(
-                authenticationManagerBean(), audience, issuer, secret, type), UsernamePasswordAuthenticationFilter.class)
+        .addFilterAfter(
+            new TrialAuthorizationFilter(secret, userService),
+            UsernamePasswordAuthenticationFilter.class)
+        .addFilterAt(
+            new TrialAuthenticationFilter(
+                authenticationManagerBean(), audience, issuer, secret, type),
+            UsernamePasswordAuthenticationFilter.class)
         .sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
   }
@@ -74,8 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     auth.jdbcAuthentication()
         .dataSource(dataSource)
         .passwordEncoder(new BCryptPasswordEncoder())
-        .usersByUsernameQuery(
-            "select username,password,enabled from user where username = ?")
+        .usersByUsernameQuery("select username,password,enabled from user where username = ?")
         .authoritiesByUsernameQuery(
             "select username,role"
                 + " from role r, user u, user_roles ur "
